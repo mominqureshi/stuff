@@ -1,0 +1,59 @@
+import pygame
+import random
+import sys
+
+pygame.init()
+WIDTH, HEIGHT = 600, 400
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+clock = pygame.time.Clock()
+
+snake = [[100, 50]]
+direction = [10, 0]
+food = [300, 200]
+
+def move_snake():
+    head = list(snake[0])
+    head[0] += direction[0]
+    head[1] += direction[1]
+    snake.insert(0, head)
+    if head == food:
+        spawn_food()
+    else:
+        snake.pop()
+
+def spawn_food():
+    global food
+    food = [random.randrange(0, WIDTH, 10), random.randrange(0, HEIGHT, 10)]
+
+def check_collision():
+    head = snake[0]
+    if head in snake[1:] or head[0] < 0 or head[0] >= WIDTH or head[1] < 0 or head[1] >= HEIGHT:
+        pygame.quit()
+        sys.exit()
+
+def draw():
+    screen.fill((0, 0, 0))
+    for segment in snake:
+        pygame.draw.rect(screen, (0, 255, 0), (*segment, 10, 10))
+    pygame.draw.rect(screen, (255, 0, 0), (*food, 10, 10))
+    pygame.display.update()
+
+while True:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            pygame.quit()
+            sys.exit()
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP and direction[1] == 0:
+                direction = [0, -10]
+            elif event.key == pygame.K_DOWN and direction[1] == 0:
+                direction = [0, 10]
+            elif event.key == pygame.K_LEFT and direction[0] == 0:
+                direction = [-10, 0]
+            elif event.key == pygame.K_RIGHT and direction[0] == 0:
+                direction = [10, 0]
+
+    move_snake()
+    check_collision()
+    draw()
+    clock.tick(15)
