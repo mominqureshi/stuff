@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" width="1200" height="1500" role="img" aria-label="Placeholder photograph">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0%" stop-color="#3f4b5b"/>
+      <stop offset="55%" stop-color="#8b97a6"/>
+      <stop offset="100%" stop-color="#d9dde2"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="37%" cy="31%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="1500" fill="url(#g)"/>
+  <rect width="1200" height="1500" fill="url(#glow)"/>
+  <rect width="1200" height="1500" filter="url(#grain)" opacity="0.10"/>
+  <g fill="#ffffff" opacity="0.10">
+    <rect x="0" y="927" width="1200" height="1"/>
+    <rect x="458" y="0" width="1" height="1500"/>
+  </g>
+</svg>

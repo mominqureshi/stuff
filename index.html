@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Momin Qureshi — Photography</title>
+<meta name="description" content="Personal portfolio and photography of Momin Qureshi.">
+<meta name="theme-color" content="#0c0c0d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#fbfbf9" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='9' fill='%23111'/></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip" href="#gallery">Skip to photos</a>
+
+<header class="site-header">
+  <a class="brand" href="#top">
+    <span class="brand-mark" aria-hidden="true"></span>
+    <span class="brand-name">Momin Qureshi</span>
+  </a>
+  <nav class="nav">
+    <a href="#gallery">Photos</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><g><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></g></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <p class="eyebrow">Photographer &amp; developer — based in London</p>
+    <h1>I take pictures of <br>light, cities, and quiet things.</h1>
+    <p class="lede">
+      A running archive of the frames I keep. Mostly wandering at odd hours,
+      mostly 35mm and a small digital body that fits in a coat pocket.
+    </p>
+    <div class="hero-actions">
+      <a class="btn" href="#gallery">See the work</a>
+      <a class="btn btn-ghost" href="#contact">Get in touch</a>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery-section">
+    <div class="section-head">
+      <h2>Selected photos</h2>
+      <div class="filters" id="filters" role="group" aria-label="Filter photos by collection"></div>
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>No photos in this collection yet.</p>
+  </section>
+
+  <section id="about" class="prose">
+    <h2>About</h2>
+    <p>
+      I&rsquo;m Momin. I write software during the week and shoot on the way to
+      and from everything else. This site is deliberately plain: no carousel, no
+      autoplay, no cookie banner. Just the pictures, as large as your screen
+      will allow.
+    </p>
+    <p>
+      Prints and licensing are available for most frames here. If something
+      catches you, say which one.
+    </p>
+    <dl class="facts">
+      <div><dt>Shooting</dt><dd>35mm film, Fuji X100</dd></div>
+      <div><dt>Developing</dt><dd>At home, badly, happily</dd></div>
+      <div><dt>Currently</dt><dd>Open to commissions</dd></div>
+    </dl>
+  </section>
+
+  <section id="contact" class="prose contact">
+    <h2>Contact</h2>
+    <p class="lede">Commissions, prints, or just a good roll of film to recommend.</p>
+    <a class="mailto" href="mailto:hello@example.com">hello@example.com</a>
+    <ul class="social">
+      <li><a href="https://instagram.com/" rel="me noopener" target="_blank">Instagram</a></li>
+      <li><a href="https://github.com/mominqureshi" rel="me noopener" target="_blank">GitHub</a></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>&copy; <span id="year"></span> Momin Qureshi</span>
+  <a href="#top">Back to top</a>
+</footer>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <button class="lb-close" type="button" data-lb="close" aria-label="Close viewer">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <button class="lb-nav lb-prev" type="button" data-lb="prev" aria-label="Previous photo">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+  </button>
+  <button class="lb-nav lb-next" type="button" data-lb="next" aria-label="Next photo">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+  </button>
+  <figure class="lb-figure">
+    <img id="lb-img" alt="">
+    <figcaption>
+      <span id="lb-caption"></span>
+      <span id="lb-count" class="lb-count"></span>
+    </figcaption>
+  </figure>
+</div>
+
+<script src="photos.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
